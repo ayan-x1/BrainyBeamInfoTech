@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Todo App Design System */
+
+@layer base {
+  :root {
+    /* Background & Surfaces */
+    --background: 240 25% 98%;
+    --background-secondary: 240 20% 96%;
+    --surface: 0 0% 100%;
+    --surface-hover: 240 20% 99%;
+    --foreground: 240 15% 10%;
+    
+    /* Primary Brand Colors - Purple to Blue Gradient */
+    --primary: 250 84% 60%;
+    --primary-hover: 250 84% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-gradient: linear-gradient(135deg, hsl(280 84% 65%), hsl(250 84% 60%));
+    
+    /* Secondary Colors */
+    --secondary: 240 15% 95%;
+    --secondary-hover: 240 15% 92%;
+    --secondary-foreground: 240 15% 15%;
+    
+    /* Accent Colors */
+    --accent: 280 84% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-subtle: 280 84% 97%;
+    
+    /* Success/Complete State */
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-subtle: 142 76% 95%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-hover: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-subtle: 0 84% 97%;
+    
+    /* Muted & Borders */
+    --muted: 240 15% 95%;
+    --muted-foreground: 240 8% 45%;
+    --border: 240 15% 90%;
+    --border-hover: 240 15% 85%;
+    --input: 240 15% 95%;
+    --ring: 250 84% 60%;
+    
+    /* Card & Popover */
+    --card: 0 0% 100%;
+    --card-foreground: 240 15% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 10%;
+    
+    /* Glassmorphism Effects */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --backdrop-blur: blur(12px);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.06);
+    --shadow-primary: 0 10px 30px -10px hsl(250 84% 60% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    --radius: 12px;
+  }
+
+  .dark {
+    /* Dark Mode Background & Surfaces */
+    --background: 240 15% 6%;
+    --background-secondary: 240 15% 8%;
+    --surface: 240 15% 10%;
+    --surface-hover: 240 15% 12%;
+    --foreground: 240 15% 95%;
+    
+    /* Primary Colors in Dark Mode */
+    --primary: 250 84% 65%;
+    --primary-hover: 250 84% 70%;
+    --primary-foreground: 240 15% 6%;
+    --primary-gradient: linear-gradient(135deg, hsl(280 84% 70%), hsl(250 84% 65%));
+    
+    /* Secondary in Dark Mode */
+    --secondary: 240 15% 15%;
+    --secondary-hover: 240 15% 18%;
+    --secondary-foreground: 240 15% 90%;
+    
+    /* Accent in Dark Mode */
+    --accent: 280 84% 70%;
+    --accent-foreground: 240 15% 6%;
+    --accent-subtle: 280 84% 12%;
+    
+    /* Success in Dark Mode */
+    --success: 142 76% 50%;
+    --success-foreground: 240 15% 6%;
+    --success-subtle: 142 76% 12%;
+    
+    /* Destructive in Dark Mode */
+    --destructive: 0 84% 65%;
+    --destructive-hover: 0 84% 70%;
+    --destructive-foreground: 240 15% 6%;
+    --destructive-subtle: 0 84% 12%;
+    
+    /* Muted & Borders in Dark Mode */
+    --muted: 240 15% 15%;
+    --muted-foreground: 240 8% 65%;
+    --border: 240 15% 20%;
+    --border-hover: 240 15% 25%;
+    --input: 240 15% 15%;
+    --ring: 250 84% 65%;
+    
+    /* Card & Popover in Dark Mode */
+    --card: 240 15% 10%;
+    --card-foreground: 240 15% 95%;
+    --popover: 240 15% 10%;
+    --popover-foreground: 240 15% 95%;
+    
+    /* Glassmorphism Effects in Dark Mode */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    /* Shadows in Dark Mode */
+    --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+    --shadow-primary: 0 10px 30px -10px hsl(250 84% 65% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 100%);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply bg-surface/80 backdrop-blur-sm border border-white/10 shadow-lg;
+  }
+  
+  /* Primary Gradient Button */
+  .btn-gradient {
+    background: var(--primary-gradient);
+    @apply text-primary-foreground shadow-primary hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300;
+  }
+  
+  /* Task Item Animations */
+  .task-item {
+    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
+  }
+  
+  .task-completed {
+    @apply opacity-60 line-through;
+  }
+  
+  /* Smooth Focus Ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50;
+  }
+}
