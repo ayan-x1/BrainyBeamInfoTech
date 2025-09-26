@@ -1,96 +1,70 @@
-<div align="center">
+## InputFORM
 
-  <img src="public/form-icon.svg" alt="Form Icon" width="72" height="72" />
-
-  <h2>Input Form — Vite + React + TypeScript</h2>
-  <p>Clean, fast, and modern dynamic form builder with shadcn UI and Supabase.</p>
-
-</div>
+A lightweight React + TypeScript app to design, validate, and submit dynamic forms. Powered by Vite, Tailwind CSS, and shadcn/ui with Supabase integration.
 
 ---
 
-### Features
+### ✨ Features
+- **Config-driven forms** with validation (react-hook-form + zod)
+- **Clean UI** with shadcn/ui + Tailwind CSS
+- **Submissions view** component included
+- **Great DX**: Vite, TypeScript, hot reload
+- **Supabase-ready** client and types (optional)
 
-- **Dynamic form**: Config-driven fields with validation via `react-hook-form` + `zod`.
-- **Beautiful UI**: `shadcn/ui` + `Tailwind CSS` components.
-- **State & data**: `@tanstack/react-query` integration ready.
-- **Supabase**: Pre-wired client for auth/storage/DB.
-- **DX**: Vite, TypeScript, ESLint, and hot reload.
-
-### Tech Stack
-
-- **Build**: Vite + TypeScript + React 18
-- **UI**: Tailwind CSS, shadcn/ui, Radix Primitives
-- **Forms**: react-hook-form, zod
-- **Data**: @tanstack/react-query
-- **Backend-as-a-Service**: Supabase
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ and npm
-
-### Install
-
+### 🚀 Quick start
 ```bash
+# Install
 npm install
-```
 
-### Development
-
-```bash
+# Start dev server
 npm run dev
-```
 
-### Production Build
-
-```bash
+# Build for production
 npm run build
-```
 
-### Preview Build Locally
-
-```bash
+# Preview production build
 npm run preview
 ```
 
-## Supabase Setup (optional)
+### 🧰 Tech stack
+- React 18 + TypeScript (Vite)
+- Tailwind CSS + shadcn/ui (Radix Primitives)
+- react-hook-form + zod
+- @tanstack/react-query
+- Supabase (optional)
 
-If you plan to use Supabase features:
-
-1. Create a project at `https://supabase.com`.
-2. Copy your Project URL and anon key.
-3. Initialize the client in `src/integrations/supabase/client.ts` with your env values.
-4. If using migrations, see `supabase/migrations/` and `supabase/config.toml`.
-
-Consider storing secrets via environment variables and reading them in Vite using `import.meta.env`.
-
-## Project Structure
-
+### 📁 Structure (key parts)
 ```
 src/
-  components/          # UI + form components (shadcn/ui)
-  hooks/               # Reusable hooks
-  integrations/        # Supabase client & types
-  lib/                 # Utilities
-  pages/               # Routes
-  main.tsx             # App entry
-public/                # Static assets
+  App.tsx
+  main.tsx
+  components/
+    DynamicForm.tsx
+    FormSubmissions.tsx
+    ui/                # shadcn/ui components
+  hooks/
+  integrations/
+    supabase/
+      client.ts
+      types.ts
+  pages/
+    Index.tsx
+    NotFound.tsx
 ```
 
-## Deploy
+### 🔧 Scripts
+- `npm run dev`: start dev server
+- `npm run build`: production build
+- `npm run preview`: preview built app
+- `npm run lint`: run ESLint
 
-This is a static SPA; deploy the `dist/` output to any static host (Vercel, Netlify, GitHub Pages, etc.).
+### 📦 Requirements
+- Node.js 18+
 
-Basic steps:
+### 📝 Notes
+- App styles: `src/App.css`, Tailwind config: `tailwind.config.ts`
+- Form icon: `public/form-icon.svg`
+- Supabase is optional; configure `src/integrations/supabase/client.ts` if used
 
-1. Build: `npm run build`
-2. Deploy the `dist/` directory with your provider.
-
-## Contact & Support
-
-- **Email**: [pathanayan8347@gmail.com](mailto:pathanayan8347@gmail.com).
-- **Phone**: [+91 9313917598](tel:+919313917598).
-- **Questions & help**: Start a Discussion or check existing issues/discussions first.
-- **Commercial support**: If you need priority assistance or custom features, add your preferred contact channel here.
+---
+Made for clarity and speed.
