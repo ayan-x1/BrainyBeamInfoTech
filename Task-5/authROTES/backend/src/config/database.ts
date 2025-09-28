@@ -1,6 +1,5 @@
 import { MongoClient, ServerApiVersion, Db } from 'mongodb';
 import dotenv from 'dotenv';
-
 dotenv.config();
 
 // MongoDB connection string - Replace with your actual credentials
