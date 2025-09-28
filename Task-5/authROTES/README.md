@@ -210,11 +210,9 @@ curl http://localhost:4000/api/protected/dashboard -b cookies.txt
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `PORT` | Backend server port | `4000` |
-| `MONGO_URI` | MongoDB connection string | `mongodb://localhost:27017/secure-dash` |
+| `MONGO_URI` | MongoDB connection string | `mongodb+srv://<db_user>:<db_password>@cluster0.8cuxpaa.mongodb.net/?retryWrites=true&w=majority&appName=<app_name>` |
 | `JWT_ACCESS_SECRET` | JWT access token secret | Required |
-| `JWT_REFRESH_SECRET` | JWT refresh token secret | Required |
-| `ACCESS_TOKEN_EXPIRES_IN` | Access token expiry | `15m` |
-| `REFRESH_TOKEN_EXPIRES_IN` | Refresh token expiry | `7d` |
+| `ACCESS_TOKEN_EXPIRES_IN` | Refresh token expiry | `7d` |
 | `NODE_ENV` | Environment mode | `development` |
 | `FRONTEND_ORIGIN` | Frontend URL for CORS | `http://localhost:5173` |
 
@@ -242,10 +240,6 @@ curl http://localhost:4000/api/protected/dashboard -b cookies.txt
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 

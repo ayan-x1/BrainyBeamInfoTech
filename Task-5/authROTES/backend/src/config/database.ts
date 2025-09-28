@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // MongoDB connection string - Replace with your actual credentials
-const uri = process.env.MONGO_URI || "mongodb+srv://pathanayan8347_db_user:BoYsgONmUB3Jx2CN@cluster0.8cuxpaa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGO_URI || "mongodb+srv://<db_user>:<db_password>@cluster0.8cuxpaa.mongodb.net/?retryWrites=true&w=majority&appName=<app_name>";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
